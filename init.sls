@@ -1,2 +1,2 @@
 include:
-  - iptables-formula.iptables
+  - 'iptables-formula.iptables'
