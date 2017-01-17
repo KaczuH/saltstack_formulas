@@ -15,7 +15,7 @@ pyenv-deps:
       - git
 
 
-{% for pyenv_version, virtualenvs in salt['pillar.get']('virtualenv:pyenvs', []) %}
+{% for pyenv_version, virtualenvs in salt['pillar.get']('virtualenv:pyenvs', []).items() %}
 python-{{ pyenv_version }}:
   pyenv.installed:
     - require:
