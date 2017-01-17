@@ -13,7 +13,7 @@ pyenv-deps:
       - llvm
       - python-virtualenv
 
-{% for pyenv_version in pillar.get('virtualenv:pyenvs') %}
+{% for pyenv_version in salt['pillar.get']('virtualenv:pyenvs', []) %}
 python-{{ pyenv_version }}:
   pyenv.installed:
     - require:
