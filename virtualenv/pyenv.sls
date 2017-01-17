@@ -12,6 +12,7 @@ pyenv-deps:
       - curl
       - llvm
       - python-virtualenv
+      - git
 
 {% for pyenv_version in salt['pillar.get']('virtualenv:pyenvs', []) %}
 python-{{ pyenv_version }}:
