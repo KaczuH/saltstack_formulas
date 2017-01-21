@@ -29,7 +29,7 @@ deployment_private_key:
 deployment_public_key:
   file.managed:
     - name: /root/.ssh/id_rsa.pub
-    - contents_pillar: repoitory:deployment_keys:public_key
+    - contents_pillar: repository:deployment_keys:public_key
     - user: root
     - group: root
     - mode: 644
