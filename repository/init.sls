@@ -34,9 +34,9 @@ deployment_public_key:
     - group: root
     - mode: 644
 
-deployment_add_identity:
-  cmd.run:
-    - name: ssh-add /root/.ssh/id_rsa
-    - require:
-      - file: deployment_private_key
+#deployment_add_identity:
+#  cmd.run:
+#    - name: ssh-add /root/.ssh/id_rsa
+#    - require:
+#      - file: deployment_private_key
 
