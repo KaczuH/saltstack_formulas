@@ -1,5 +1,5 @@
 {% for repo_url, config in salt['pillar.get']('repository:repositories').items() %}
-{{ repo_url }}
+{{ repo_url }}:
   git.latest:
     - rev: {{ config.rev }}
     - target: {{ config.target }}
