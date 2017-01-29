@@ -26,7 +26,7 @@ python-{{ pyenv_version }}:
   virtualenv.managed:
     - python: /usr/local/pyenv/versions/{{ pyenv_version }}/bin/python
     - system_site_packages: False
-{% if conf.requirements %}
+{% if conf %}
     - requirements: {{ conf.requirements }}
 {% endif %}
     - require:
