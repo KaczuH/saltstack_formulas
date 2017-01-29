@@ -31,5 +31,11 @@ python-{{ pyenv_version }}:
 {% endif %}
     - require:
       - pyenv: python-{{ pyenv_version }}
+
+
+pip_{{ virtualenv_name }}:
+  pip.installed:
+    bin_env: /var/www/.virtualenvs/{{ virtualenv_name }}
+    requirements: {{ conf.requirements }}
 {% endfor %}
 {% endfor %}
