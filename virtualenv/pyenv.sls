@@ -21,11 +21,14 @@ python-{{ pyenv_version }}:
     - require:
       - pkg: pyenv-deps
 
-{% for virtualenv_name in virtualenvs %}
+{% for virtualenv_name, conf in virtualenvs.items() %}
 /var/www/.virtualenvs/{{ virtualenv_name }}:
   virtualenv.managed:
     - python: /usr/local/pyenv/versions/{{ pyenv_version }}/bin/python
     - system_site_packages: False
+{% if conf.requirements %}
+    - requirements: {{ conf.requirements }}
+{% endif %}
     - require:
       - pyenv: python-{{ pyenv_version }}
 {% endfor %}
