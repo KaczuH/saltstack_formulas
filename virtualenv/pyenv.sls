@@ -35,7 +35,7 @@ python-{{ pyenv_version }}:
 
 pip_{{ virtualenv_name }}:
   pip.installed:
-    bin_env: /var/www/.virtualenvs/{{ virtualenv_name }}
+    - bin_env: /var/www/.virtualenvs/{{ virtualenv_name }}
 {% if conf and conf['requirements'] %}
     - requirements: {{ conf['requirements'] }}
 {% endif %}
