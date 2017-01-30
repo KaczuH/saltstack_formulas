@@ -1,6 +1,6 @@
 {% from 'django/map.jinja' import django with context %}
 
-{% for project_name, config in django.projects %}
+{% for project_name, config in django.projects.items() %}
 {{ project_name }}_settings_file:
   file.managed:
     - name: {{ salt['pillar.get']('django:project_root') }}/credits/{{ salt['pillar.get']('django:settings_filename') }}
