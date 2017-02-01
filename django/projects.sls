@@ -3,8 +3,10 @@
 {% for project_name, config in django.projects.items() %}
 {{ project_name }}_settings_file:
   file.managed:
-    - name: {{ salt['pillar.get']('django:project_root') }}/{{ project_name }}/{{ salt['pillar.get']('django:settings_filename') }}
+    - name: {{ config['project_root'] }}/{{ project_name }}/{{ config['settings_filename'] }}
     - source: salt://django/templates/settings.jinja
+    - context: |
+        {{ config['settings']|indent(8) }}
     - template: jinja
     - user: www-data
     - group: www-data
