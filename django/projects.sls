@@ -6,7 +6,7 @@
     - name: {{ config['project_root'] }}/{{ project_name }}/{{ config['settings_filename'] }}
     - source: salt://django/templates/settings.jinja
     - context: |
-        {{ config['settings']|indent(8) }}
+        {{ config['settings'] }}
     - template: jinja
     - user: www-data
     - group: www-data
