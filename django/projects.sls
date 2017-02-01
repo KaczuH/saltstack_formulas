@@ -18,19 +18,18 @@
     - user: www-data
     - group: www-data
 
-django_manage_collectstatic:
+{{ project_name }}_django_manage_collectstatic:
   module.run:
     - name: django.collectstatic
-    - bin_env: {{ salt['pillar.get']('virtualenv:path') }}
-    - settings_module: {{ salt['pillar.get']('django:settings_module') }}
-    - pythonpath: {{ salt['pillar.get']('django:project_root') }}
+    - bin_env: {{ config.virtualenv_path }}
+    - settings_module: {{ config.settings_module }}
+    - pythonpath: {{ config.project_root }}
     - noinput: True
     - require:
-      - virtualenv: {{ salt['pillar.get']('virtualenv:path') }}
-      - file: static_root_directory
-      - cmd: webpack_compile_statics
+      - virtualenv: {{ config.virtualenv_path }}
+      - file: {{ project_name }}_static_root_directory
 
-django_migrate_db:
+{{ project_name }}_django_migrate_db:
   module.run:
     - name: django.command
     - command: migrate
