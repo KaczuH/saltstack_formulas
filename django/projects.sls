@@ -26,7 +26,6 @@
     - pythonpath: {{ config.project_root }}
     - noinput: True
     - require:
-      - virtualenv: {{ config.virtualenv_path }}
       - file: {{ project_name }}_static_root_directory
 
 {{ project_name }}_django_migrate_db:
