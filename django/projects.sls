@@ -33,8 +33,8 @@
   module.run:
     - name: django.command
     - command: migrate
-    - bin_env: {{ salt['pillar.get']('virtualenv:path') }}
-    - settings_module: {{ salt['pillar.get']('django:settings_module') }}
-    - pythonpath: {{ salt['pillar.get']('django:project_root') }}
+    - bin_env: {{ config.virtualenv_path }}
+    - settings_module: {{ config.settings_module }}
+    - pythonpath: {{ config.project_root }}
 
 {% endfor %}
