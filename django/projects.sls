@@ -3,7 +3,7 @@
 {% for project_name, config in django.projects.items() %}
 {{ project_name }}_settings_file:
   file.managed:
-    - name: {{ salt['pillar.get']('django:project_root') }}/credits/{{ salt['pillar.get']('django:settings_filename') }}
+    - name: {{ salt['pillar.get']('django:project_root') }}/{{ project_name }}/{{ salt['pillar.get']('django:settings_filename') }}
     - source: salt://django/templates/settings.jinja
     - template: jinja
     - user: www-data
