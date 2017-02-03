@@ -14,7 +14,13 @@
 
 {{ project_name }}_static_root_directory:
   file.directory:
-    - name: {{ config['root_dir'] }}/static
+    - name: {{ config['static_root'] }}
+    - user: www-data
+    - group: www-data
+
+{{ project_name }}_media_root_directory:
+  file.directory:
+    - name: {{ config['media_root'] }}
     - user: www-data
     - group: www-data
 
