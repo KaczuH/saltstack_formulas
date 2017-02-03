@@ -17,12 +17,14 @@
     - name: {{ config['settings']['static_root'] }}
     - user: www-data
     - group: www-data
+    - makedirs: True
 
 {{ project_name }}_media_root_directory:
   file.directory:
     - name: {{ config['settings']['media_root'] }}
     - user: www-data
     - group: www-data
+    - makedirs: True
 
 {{ project_name }}_django_manage_collectstatic:
   module.run:
