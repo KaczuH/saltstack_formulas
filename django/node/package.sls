@@ -9,7 +9,7 @@ node_env_prod:
 {{ project_name }}_install_package_json:
   module.run:
     - name: npm.install
-    - dir: {{ conf['root_dir'] }}
+    - dir: {{ config['root_dir'] }}
     - require:
       - pkg: node_install
 
@@ -17,7 +17,7 @@ node_env_prod:
 {{ project_name }}_webpack_compile_statics:
   cmd.run:
     - name: webpack --optimize-minify --optimize-dedupe --bail
-    - cwd: {{ conf['root_dir'] }}
+    - cwd: {{ config['root_dir'] }}
     - require:
       - module: install_webpack
       - environ: node_env_prod
