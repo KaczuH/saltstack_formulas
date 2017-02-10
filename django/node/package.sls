@@ -6,7 +6,7 @@ node_env_prod:
     - value: production
 
 {% for project_name, config in django.projects.items() %}
-{% if config['npm_install'] %}
+{% if config.npm_install %}
 {{ project_name }}_install_package_json:
   module.run:
     - name: npm.install
