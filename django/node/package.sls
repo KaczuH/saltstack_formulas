@@ -6,13 +6,13 @@ node_env_prod:
     - value: production
 
 {% for project_name, config in django.projects.items() %}
+{% if config['npm_install'] } %}
 {{ project_name }}_install_package_json:
   module.run:
     - name: npm.install
     - dir: {{ config['root_dir'] }}
     - require:
       - pkg: node_install
-
 
 {{ project_name }}_webpack_compile_statics:
   cmd.run:
@@ -21,4 +21,6 @@ node_env_prod:
     - require:
       - module: install_webpack
       - environ: node_env_prod
+
+{% endif %}
 {% endfor %}
