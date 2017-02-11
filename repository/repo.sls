@@ -1,6 +1,3 @@
-include:
-  - nginx.ng
-
 {% for repo_url, config in salt['pillar.get']('repository:repositories').items() %}
 {{ repo_url }}:
   git.latest:
@@ -13,6 +10,4 @@ include:
       - ssh_known_hosts: bitbucket.com
       - file: deployment_private_key
       - file: deployment_public_key
-    - watch_in:
-      - service: nginx_service
 {% endfor %}
