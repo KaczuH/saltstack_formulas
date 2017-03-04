@@ -27,7 +27,8 @@ celery_config_directory:
     - name: /etc/systemd/system/{{ worker_name }}_celery.service
     - source: salt://celery/templates/celery.service.jinja
     - context:
-        settings: {{ config['working_directory'] }}
+        working_directory: {{ config['working_directory'] }}
+        worker_name: {{ worker_name }}
     - template: jinja
     - user: root
     - group: root
