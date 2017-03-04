@@ -10,7 +10,7 @@ celery_config_directory:
 {% for worker_name, config in celery.workers.items() %}
 
 {{ worker_name }}_celery_worker:
-  file.manage:
+  file.managed:
     - name: /etc/celery/conf.d/{{ worker_name }}_celery
     - source: salt://celery/templates/celery.jinja
     - context:
