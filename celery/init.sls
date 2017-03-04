@@ -17,7 +17,7 @@ celery_log_directory:
 {% for worker_name, config in celery.workers.items() %}
 
 {{ worker_name }}_log_file:
-  file.exists:
+  file.managed:
     - name: /var/log/celery/{{ worker_name }}.log
     - user: celery
     - group: celery
