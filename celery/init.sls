@@ -22,4 +22,18 @@ celery_config_directory:
     - require:
       - file: celery_config_directory
 
+{{ worker_name }}_systemd_unit_file:
+  file.managed:
+    - name: /etc/systemd/system/{{ worker_name }}_celery.service
+    - source: salt://celery/templates/celery.service.jinja
+    - context:
+        settings: {{ config['working_directory'] }}
+    - template: jinja
+    - user: root
+    - group: root
+    - mode: 644
+    - require:
+      - file: celery_config_directory
+      - file: {{ worker_name }}_celery_worker
+
 {% endfor %}
