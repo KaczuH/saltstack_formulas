@@ -37,4 +37,11 @@ celery_config_directory:
       - file: celery_config_directory
       - file: {{ worker_name }}_celery_worker
 
+{{ worker_name }}_celery:
+  service.running:
+    - enable: True
+    - reload: True
+    - require:
+      - file: {{ worker_name }}_systemd_unit_file
+
 {% endfor %}
