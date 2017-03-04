@@ -7,7 +7,23 @@ celery_config_directory:
     - group: root
     - makedirs: True
 
+celery_log_directory:
+  file.directory:
+    - name: /var/log/celery
+    - user: celery
+    - group: celery
+
+
 {% for worker_name, config in celery.workers.items() %}
+
+{{ worker_name }}_log_file:
+  file.exists:
+    - name: /var/log/celery/{{ worker_name }}.log
+    - user: celery
+    - group: celery
+    - require:
+        - user: users_celery_user
+        - file: celery_log_directory
 
 {{ worker_name }}_celery_worker:
   file.managed:
