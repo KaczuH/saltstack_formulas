@@ -22,4 +22,4 @@ celery_config_directory:
     - require:
       - file: celery_config_directory
 
-{% endif %}
+{% endfor %}
