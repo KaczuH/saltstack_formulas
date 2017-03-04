@@ -1,0 +1,5 @@
+{% set celery = salt['pillar.get']('celery', {
+  'workers': {
+
+  }
+}, merge=True) %}
