@@ -59,5 +59,8 @@ celery_log_directory:
     - reload: True
     - require:
       - file: {{ worker_name }}_systemd_unit_file
+    - watch:
+      - file: {{ worker_name }}_systemd_unit_file
+      - file: {{ worker_name }}_celery_worker
 
 {% endfor %}
