@@ -62,6 +62,5 @@ celery_log_directory:
     - watch:
       - file: {{ worker_name }}_systemd_unit_file
       - file: {{ worker_name }}_celery_worker
-      - file: {{ config['working_directory'] }}/celeryconfig.py
 
 {% endfor %}
