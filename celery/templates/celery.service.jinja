@@ -9,7 +9,7 @@ Group=celery
 EnvironmentFile=/etc/celery/conf.d/{{ worker_name }}_celery
 WorkingDirectory={{ working_directory }}
 ExecStart=/bin/sh -c '${CELERY_BIN} multi start ${CELERYD_NODES} -c 1 \
-  -A ${CELERY_APP} --pidfile=${CELERYD_PID_FILE} \
+  -A ${CELERY_APP} --pidfile=${CELERYD_PID_FILE} --workdir=${CELERYD_CHDIR} \
   --logfile=${CELERYD_LOG_FILE} --loglevel=${CELERYD_LOG_LEVEL} ${CELERYD_OPTS}'
 ExecStop=/bin/sh -c '${CELERY_BIN} multi stopwait ${CELERYD_NODES} \
   --pidfile=${CELERYD_PID_FILE}'

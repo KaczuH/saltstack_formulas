@@ -31,6 +31,7 @@ celery_log_directory:
     - source: salt://celery/templates/celery.jinja
     - context:
         settings: {{ config['settings'] }}
+        working_directory: {{ config['working_directory'] }}
     - template: jinja
     - user: root
     - group: root
