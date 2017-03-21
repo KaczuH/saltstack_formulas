@@ -13,6 +13,12 @@ celery_log_directory:
     - user: celery
     - group: celery
 
+celery_pid_directory:
+  file.directory:
+    - name: /var/run/celery
+    - user: celery
+    - group: celery
+
 
 {% for worker_name, config in celery.workers.items() %}
 
