@@ -111,6 +111,11 @@ LOGGING = {
             'handlers': ['null'],
             'propagate': False,
         },
+        '': {
+            'handlers': ['console', 'file'],
+            'level': 'DEBUG',
+            'propagate': True
+        },
     }
 }
 
