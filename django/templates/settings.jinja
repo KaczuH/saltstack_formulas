@@ -74,7 +74,7 @@ LOGGING = {
             'formatter': 'django.server'
         },
         'file': {
-            'level': 'DEBUG',
+            'level': '{{ settings.file_loglevel|default('DEBUG') }}',
             'filters': ['require_debug_false'],
             'class': 'logging.handlers.RotatingFileHandler',
             'delay': True,
