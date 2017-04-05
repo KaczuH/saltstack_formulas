@@ -11,7 +11,7 @@
       - file: deployment_private_key
       - file: deployment_public_key
 
-{{ config.uwsgi_ini }}
+{{ config.uwsgi_ini }}:
   file.touch:
     - onchanges:
       - git: {{ repo_url }}
