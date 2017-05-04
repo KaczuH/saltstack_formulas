@@ -31,6 +31,42 @@ celery_pid_directory:
         - user: users_celery_user
         - file: celery_log_directory
 
+{% if config['settings']['celery_beat']['enabled'] %}
+{{ worker_name }}_beat_log_file:
+  file.managed:
+    - name: /var/log/celery/{{ worker_name }}_beat.log
+    - user: celery
+    - group: celery
+    - require:
+        - user: users_celery_user
+        - file: celery_log_directory
+
+{{ worker_name }}_beat_systemd_unit_file:
+  file.managed:
+    - name: /etc/systemd/system/{{ worker_name }}_beat.service
+    - source: salt://celery/templates/celerybeat.service.jinja
+    - context:
+        working_directory: {{ config['working_directory'] }}
+        worker_name: {{ worker_name }}
+    - template: jinja
+    - user: root
+    - group: root
+    - mode: 644
+    - require:
+      - file: celery_config_directory
+      - file: {{ worker_name }}_celery_worker
+
+{{ worker_name }}_beat_celery:
+  service.running:
+    - enable: True
+    - reload: True
+    - require:
+      - file: {{ worker_name }}_beat_systemd_unit_file
+    - watch:
+      - file: {{ worker_name }}_beat_systemd_unit_file
+      - file: {{ worker_name }}_celery_worker
+{% endif %}
+
 {{ worker_name }}_celery_worker:
   file.managed:
     - name: /etc/celery/conf.d/{{ worker_name }}_celery
