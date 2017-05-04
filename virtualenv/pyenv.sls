@@ -31,6 +31,7 @@ python-{{ pyenv_version }}:
 {% endif %}
     - require:
       - pyenv: python-{{ pyenv_version }}
+      - git: {{ conf['repo_url'] }}
 
 
 {% if conf and conf['requirements'] %}
