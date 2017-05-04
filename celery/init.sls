@@ -31,7 +31,7 @@ celery_pid_directory:
         - user: users_celery_user
         - file: celery_log_directory
 
-{% if config['settings']['celery_beat']['enabled'] %}
+{% if config.settings.celery_beat.enabled %}
 {{ worker_name }}_beat_log_file:
   file.managed:
     - name: /var/log/celery/{{ worker_name }}_beat.log
