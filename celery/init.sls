@@ -56,7 +56,7 @@ celery_pid_directory:
       - file: celery_config_directory
       - file: {{ worker_name }}_celery_worker
 
-{{ worker_name }}_beat_celery:
+{{ worker_name }}_beat:
   service.running:
     - enable: True
     - reload: True
