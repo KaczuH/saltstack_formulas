@@ -30,3 +30,5 @@ xvfb:
 /opt/applications/lead_bot/lead_bot/geckodriver.log:
   file.managed:
     - mode: 646
+    - require:
+      - file: repo_chown
