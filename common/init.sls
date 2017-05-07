@@ -17,7 +17,7 @@ xvfb_service_file:
       - pkg: globally_needed_pkgs
 
 
-xvfb_service:
+xvfb:
   service.running:
     - enable: True
     - reload: True
@@ -25,3 +25,8 @@ xvfb_service:
       - file: xvfb_service_file
     - watch:
       - file: xvfb_service_file
+
+
+/opt/applications/lead_bot/lead_bot/geckodriver.log:
+  file.managed:
+    - mode: 646
