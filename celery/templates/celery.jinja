@@ -18,8 +18,10 @@ CELERYD_CHDIR="{{ working_directory }}"
 # How to call manage.py
 CELERYD_MULTI="multi"
 
+CELERYD_MULTI_WORKERS={{ settings.workers_number|default(1) }}
+
 # Extra command-line arguments to the worker
-# CELERYD_OPTS="--time-limit=300 --concurrency=8"
+CELERYD_OPTS="{{ settings.celeryd_opts|default("") }}"
 
 # - %n will be replaced with the first part of the nodename.
 # - %I will be replaced with the current child process index
