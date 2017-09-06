@@ -4,6 +4,7 @@ bitbucket.com:
     - user: root
     - enc: rsa
     - fingerprint: 97:8c:1b:f2:6f:14:6b:5c:3b:ec:aa:46:46:74:7c:40
+    - fingerprint_hash_type: md5
 
 
 repo_chown:
