@@ -38,7 +38,6 @@ firefox_ppa:
     - humanname: Firefox PPA
     - name: deb http://security.debian.org/ stretch/updates main
     - file: /etc/apt/sources.list.d/debian-mozilla.list
-    - dist: stretch
     - key_url: https://mozilla.debian.net/archive.asc
 
 firefox_esr:
