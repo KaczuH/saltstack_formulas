@@ -36,6 +36,6 @@ globally_needed_pkgs:
 firefox_ppa:
   pkgrepo.managed:
     - humanname: Firefox PPA
-    - name: deb http://mozilla.debian.net/ stretch-backports firefox-release
+    - name: deb http://security.debian.org/ stretch/updates main firefox-esr
     - file: /etc/apt/sources.list.d/debian-mozilla.list
     - dist: xenial
