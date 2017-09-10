@@ -51,4 +51,5 @@ lead_bot_screenshots_dir:
     - name: {{ django.projects.lead_bot.settings.media_root }}/screenshots
     - user: www-data
     - group: www-data
+    - dir_mode: 764
     - makedirs: True
