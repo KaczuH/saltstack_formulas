@@ -43,4 +43,8 @@ firefox_ppa:
 firefox_esr:
   pkg.installed:
     - pkgs:
+      - libgtk-3-0
+      - libhunspell-1.4-0
+      - libjsoncpp1
+      - libvpx4
       - firefox-esr
