@@ -51,7 +51,7 @@ firefox_esr:
       - firefox-esr
 
 geckodriver_file:
-  file.managed:
+  archive.extracted:
     - source: https://github.com/mozilla/geckodriver/releases/download/v0.16.1/geckodriver-v0.16.1-linux64.tar.gz
-    - name: /tmp/geckodriver-v0.16.1-linux64.tar.gz geckodriver
+    - name: /usr/bin/geckodriver
     - skip_verify: True
