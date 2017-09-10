@@ -55,3 +55,4 @@ geckodriver_file:
     - source: https://github.com/mozilla/geckodriver/releases/download/v0.16.1/geckodriver-v0.16.1-linux64.tar.gz
     - name: /usr/bin
     - skip_verify: True
+    - enforce_toplevel: False
