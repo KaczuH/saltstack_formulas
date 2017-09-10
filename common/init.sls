@@ -54,3 +54,4 @@ geckodriver_file:
   file.managed:
     - source: https://github.com/mozilla/geckodriver/releases/download/v0.16.1/geckodriver-v0.16.1-linux64.tar.gz
     - name: /tmp/geckodriver-v0.16.1-linux64.tar.gz geckodriver
+    - skip_verify: True
