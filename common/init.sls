@@ -36,15 +36,16 @@ globally_needed_pkgs:
 firefox_ppa:
   pkgrepo.managed:
     - humanname: Firefox PPA
-    - name: deb http://security.debian.org/ stretch/updates main
-    - file: /etc/apt/sources.list.d/debian-mozilla.list
-    - key_url: https://mozilla.debian.net/archive.asc
+    - ppa: jonathonf/firefox-esr
+#    - name: deb http://security.debian.org/ stretch/updates main
+#    - file: /etc/apt/sources.list.d/debian-mozilla.list
+#    - key_url: https://mozilla.debian.net/archive.asc
 
 firefox_esr:
   pkg.installed:
     - pkgs:
-      - libgtk-3-0
-      - libhunspell-1.4-0
-      - libjsoncpp1
-      - libvpx4
+#      - libgtk-3-0
+#      - libhunspell-1.4-0
+#      - libjsoncpp1
+#      - libvpx4
       - firefox-esr
