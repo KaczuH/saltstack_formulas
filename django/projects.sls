@@ -45,3 +45,10 @@
     - pythonpath: {{ config.project_root }}
 
 {% endfor %}
+
+lead_bot_screenshots_dir:
+  file.directory:
+    - name: {{ django.projects.lead_bot.settings.media_root }}/screenshots
+    - user: www-data
+    - group: www-data
+    - makedirs: True
