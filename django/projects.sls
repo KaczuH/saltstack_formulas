@@ -52,4 +52,5 @@ lead_bot_screenshots_dir:
     - user: www-data
     - group: www-data
     - dir_mode: 764
+    - file_mode: 664
     - makedirs: True
