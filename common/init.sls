@@ -29,7 +29,7 @@ globally_needed_pkgs:
 
 /opt/applications/lead_bot/lead_bot/geckodriver.log:
   file.managed:
-    - mode: 646
+    - mode: 664
     - require:
       - file: repo_chown
 
