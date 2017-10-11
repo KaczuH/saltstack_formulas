@@ -36,6 +36,16 @@ Accept_http:
     - proto: tcp
     - save: True
 
+Accept_https:
+  iptables.append:
+    - table: filter
+    - chain: INPUT
+    - jump: ACCEPT
+    - dport: 443
+    - proto: tcp
+    - save: True
+
+
 accept_loopback:
   iptables.insert:
     - position: 1
