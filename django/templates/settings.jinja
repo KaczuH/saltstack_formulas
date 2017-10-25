@@ -31,7 +31,7 @@ ALLOWED_HOSTS = {{ settings.allowed_hosts }}
 
 DATABASES = {
     'default': {
-        'ENGINE': '{{ settings.db_engine }}l',
+        'ENGINE': '{{ settings.db_engine }}',
         'NAME': '{{ settings.db_name }}',
 {% if 'db_user' in settings %}
         'USER': '{{ settings.db_user }}',
