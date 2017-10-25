@@ -38,7 +38,7 @@ DATABASES = {
 {% endif %}
 {% if settings.db_password %}
         'PASSWORD': '{{ settings.db_password }}',
-{% emdif %}
+{% endif %}
 {% if settings.db_host %}
         'HOST': '{{ settings.db_host }}',
 {% enif %}
