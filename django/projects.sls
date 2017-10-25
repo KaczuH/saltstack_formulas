@@ -46,6 +46,7 @@
 
 {% endfor %}
 
+{% if grains['host'] == 'scw-632b42' %}
 lead_bot_screenshots_dir:
   file.directory:
     - name: {{ django.projects.lead_bot.settings.media_root }}/screenshots
@@ -54,3 +55,4 @@ lead_bot_screenshots_dir:
     - dir_mode: 775
     - file_mode: 664
     - makedirs: True
+{% endif %}
