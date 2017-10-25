@@ -33,16 +33,16 @@ DATABASES = {
     'default': {
         'ENGINE': '{{ settings.db_engine }}l',
         'NAME': '{{ settings.db_name }}',
-{% if settings.db_user %}
+{% if 'db_user' in settings %}
         'USER': '{{ settings.db_user }}',
 {% endif %}
-{% if settings.db_password %}
+{% if 'db_password' in settings %}
         'PASSWORD': '{{ settings.db_password }}',
 {% endif %}
-{% if settings.db_host %}
+{% if 'db_host' in settings %}
         'HOST': '{{ settings.db_host }}',
 {% endif %}
-{% if settings.db_port %}
+{% if 'db_port' in settings %}
         'PORT': '{{ settings.db_port }}'
 {% endif %}
     }
