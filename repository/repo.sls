@@ -8,8 +8,8 @@
     - identity: /root/.ssh/id_rsa
     - require:
       - ssh_known_hosts: bitbucket.com
-      - file: deployment_private_key
-      - file: deployment_public_key
+#      - file: deployment_private_key
+#      - file: deployment_public_key
 
 {{ config.uwsgi_ini }}:
   file.touch:

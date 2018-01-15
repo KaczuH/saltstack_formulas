@@ -19,21 +19,21 @@ repo_chown:
       - group
       - mode
 
-deployment_private_key:
-  file.managed:
-    - name: /root/.ssh/id_rsa
-    - contents_pillar: repository:deployment_keys:private_key
-    - user: root
-    - group: root
-    - mode: 600
-
-deployment_public_key:
-  file.managed:
-    - name: /root/.ssh/id_rsa.pub
-    - contents_pillar: repository:deployment_keys:public_key
-    - user: root
-    - group: root
-    - mode: 644
+#deployment_private_key:
+#  file.managed:
+#    - name: /root/.ssh/id_rsa
+#    - contents_pillar: repository:deployment_keys:private_key
+#    - user: root
+#    - group: root
+#    - mode: 600
+#
+#deployment_public_key:
+#  file.managed:
+#    - name: /root/.ssh/id_rsa.pub
+#    - contents_pillar: repository:deployment_keys:public_key
+#    - user: root
+#    - group: root
+#    - mode: 644
 
 #deployment_add_identity:
 #  cmd.run:
