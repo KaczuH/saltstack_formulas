@@ -1,6 +1,6 @@
 base:
   '*':
-    - users.common
+    - users
     - openssh
     - fail2ban
   'scw-632b42':
