@@ -14,6 +14,7 @@ base:
     - redis
     - celery
   'lead-base':
+    - nginx.ng.src
     - nginx.ng
     - postgres
     - virtualenv
