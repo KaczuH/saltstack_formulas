@@ -1,6 +1,5 @@
 include:
-  repository:
-    - repository.repo
+  - repository.repo
 
 bitbucket.com:
   ssh_known_hosts:
