@@ -1,3 +1,3 @@
 include:
   - django.log
-  - django.projrct
+  - django.projects
