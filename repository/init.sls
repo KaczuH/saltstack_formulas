@@ -1,3 +1,7 @@
+include:
+  repository:
+    - repository.repo
+
 bitbucket.com:
   ssh_known_hosts:
     - present
